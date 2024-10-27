@@ -1,6 +1,9 @@
 package iteration
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func TestRepeat(t *testing.T) {
 	s := []string{"Golang", "Java", "Python"}
@@ -16,4 +19,11 @@ func BenchmarkRepeat(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		Repeat([]string{"Golang", "Java", "Python"})
 	}
+}
+
+func ExampleRepeat() {
+	s := []string{"Golang", "Java", "Python"}
+	repeated := Repeat(s)
+	fmt.Println(repeated)
+	// Output: GolangJavaPython
 }
